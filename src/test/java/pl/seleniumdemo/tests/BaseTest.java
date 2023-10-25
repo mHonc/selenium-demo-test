@@ -16,6 +16,8 @@ public class BaseTest {
     @BeforeMethod
     public void setup() throws IOException {
         driver = DriverFactory.getDriver();
+        driver.manage().window().maximize();
+        driver.get("http://seleniumdemo.com/");
     }
 
     @AfterMethod
