@@ -5,16 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class LoggedUserPage {
+    @FindBy(xpath = "//div/p/strong")
+    private WebElement userIdText;
 
-    @FindBy(xpath = "//a/span[text()='My account']")
-    private WebElement myAccountButton;
-
-    public HomePage(WebDriver driver) {
+    public LoggedUserPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public void openMyAccountPage() {
-        myAccountButton.click();
+    public WebElement getUserIdText() {
+        return userIdText;
     }
 }

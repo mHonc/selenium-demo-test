@@ -12,11 +12,10 @@ public class DriverFactory {
     public static WebDriver getDriver() throws IOException {
         String browser = PropertiesLoader.loadProperties("browser.name");
 
-        if(browser.equals("firefox")){
+        if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             return new FirefoxDriver();
-        }
-        else{
+        } else {
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
         }
