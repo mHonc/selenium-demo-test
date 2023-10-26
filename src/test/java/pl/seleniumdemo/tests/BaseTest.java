@@ -17,12 +17,12 @@ public class BaseTest {
     public void setup() throws IOException {
         driver = DriverFactory.getDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://seleniumdemo.com/");
     }
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+        //driver.quit();
     }
 }
