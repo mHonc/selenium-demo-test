@@ -1,13 +1,16 @@
 package pl.seleniumdemo.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pl.seleniumdemo.Model.Customer;
+import pl.seleniumdemo.utils.SeleniumHelper;
 
 public class FormFillingPage {
+    private WebDriver driver;
     @FindBy(id = "billing_first_name")
     private WebElement firstNameInput;
 
@@ -49,6 +52,7 @@ public class FormFillingPage {
 
     public FormFillingPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
+        this.driver = driver;
     }
 
 
@@ -66,7 +70,8 @@ public class FormFillingPage {
         this.companyInput.sendKeys(customer.getCompanyName());
         this.adressInput2.sendKeys(customer.getAdress2());
         this.notesInput.sendKeys(customer.getComments());
-        Thread.sleep(1000);
+        Thread.sleep(5000);
+        SeleniumHelper.waitForElementToBeVisible(driver, By.xpath("//button[@id='place_order']"));
         this.placeOrderButton.click();
     }
 }

@@ -8,13 +8,18 @@ import org.openqa.selenium.support.PageFactory;
 public class ConfirmedOrderPage {
 
     @FindBy(xpath = "//p[text()='Thank you. Your order has been received.']")
-    private WebElement orderConfirmationText;
+    private WebElement orderConfirmationTextField;
+
+    @FindBy(xpath = "//td[contains(@class, 'product-name')]")
+    private WebElement productName;
 
     public ConfirmedOrderPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public WebElement getOrderConfirmationText(){
-        return orderConfirmationText;
+    public WebElement getOrderConfirmationTextField(){
+        return orderConfirmationTextField;
     }
+
+    public WebElement getProductName() { return productName; }
 }
