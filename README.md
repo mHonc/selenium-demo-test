@@ -35,7 +35,8 @@ Automated features:
 Other features:
 - Taking screenshots from tests results (saved as actual date and time)
 - Generating simple report from all tests as index.html file
-- Loading test data from .xlsx file in some tests (excell) 
+- Loading test data from .xlsx file in some tests (excell)
+- Login test scenario (Scenariusz_testowy_logowania.xlsx)
 
 ## Screenshots
 ![Example screenshot](src/test/resources/screenshots/report1.jpg)
